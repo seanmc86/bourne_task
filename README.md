@@ -10,7 +10,7 @@ The libraries that have been used here:
 * mockito - mock dependencies for easier unit testing of services
 * bloc_test - minimal boilerplate, effective testing of blocs
 
-Comments can be followed within app.dart, and a unit test for the http request can be seen in test/app_test.dart.
+Comments can be followed within app.dart, and unit tests for both the http request and data bloc can be seen in the test folder.
 
 ## Getting Started
 
