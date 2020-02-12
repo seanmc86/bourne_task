@@ -8,6 +8,7 @@ The libraries that have been used here:
 * bloc and flutter_bloc - sample of reactive building with bloc, exposing only specific events
 * dartz - provides Either, greater certainty around return types
 * mockito - mock dependencies for easier unit testing of services
+* bloc_test - minimal boilerplate, effective testing of blocs
 
 Comments can be followed within app.dart, and a unit test for the http request can be seen in test/app_test.dart.
 
