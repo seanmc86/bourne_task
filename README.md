@@ -3,8 +3,8 @@
 A Flutter project with the purpose of demoing some conclusions based on a list of data provided.
 
 The only libraries that have been used here are:
-http - future-based API for http requests, little boilerplate
-mockito - mock dependencies for easier unit testing of services
+* http - future-based API for http requests, little boilerplate
+* mockito - mock dependencies for easier unit testing of services
 
 Comments can be followed within app.dart, and a unit test for the http request can be seen in test/app_test.dart.
 
