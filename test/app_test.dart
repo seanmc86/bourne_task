@@ -1,5 +1,7 @@
 import 'package:bourne_task/data_source.dart';
+import 'package:bourne_task/models/failure.dart';
 import 'package:bourne_task/models/group.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
 import 'package:mockito/mockito.dart';
@@ -19,7 +21,8 @@ main() {
       when(client.get(dataUrl))
           .thenAnswer((_) async => Response(mockData, 200));
 
-      expect(await dataSource.fetchData(), isInstanceOf<List<Group>>());
+      expect(await dataSource.fetchData(),
+          isInstanceOf<Right<Failure, List<Group>>>());
     });
 
     test('throws an exception if the call completes with an error', () {
@@ -29,7 +32,8 @@ main() {
       when(client.get(dataUrl))
           .thenAnswer((_) async => Response('Not Found', 404));
 
-      expect(dataSource.fetchData(), throwsException);
+      expectLater(dataSource.fetchData(),
+          throwsA(isInstanceOf<Left<String, dynamic>>()));
     });
   });
 }
